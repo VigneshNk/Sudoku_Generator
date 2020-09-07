@@ -69,11 +69,10 @@ def random_box(sudoku_board: List[List[int]]) -> None:
 
             while sudoku_board[row + i][col + j] == 0:
                 new_value = random.randint(1, 9)
-                if used_num[new_value] == 0:
+                
+		if used_num[new_value] == 0:
                     sudoku_board[row + i][col + j] = new_value
                     used_num[new_value] = 1
-
-
 
 
 def shift_values(sudoku_board: List[List[int]], cord: List[int]) -> bool:
@@ -142,7 +141,8 @@ def remove_boxes(sudoku_board: List[List[int]], num: int) -> None:
     for loops in range(num):
         x = random.randint(0, 8)
         y = random.randint(0, 8)
-        while sudoku_board[x][y] == 0:
+        
+	while sudoku_board[x][y] == 0:
             x = random.randint(0, 8)
             y = random.randint(0, 8)
 
